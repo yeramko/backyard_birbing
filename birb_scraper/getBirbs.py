@@ -27,6 +27,30 @@ def extract_jobs(URL, loc):
 
     return birbs
 
+def extract_info(url):
+    r = requests.get(url)
+
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    cards = soup.find_all("a", {"class": "card-link"})
+    print(cards)
+
+    birbs = []
+
+
+        # name = photodiv.find("p").get_text()
+        #
+        # image = photodiv.find("img")
+        # img = image.attrs['src']
+        # picture = "https://www.birdscanada.org/bscapps/checklist/" + img
+        # location = "Metro Vancouver, BC"
+        # birb = {"name": name,
+        #         "picture": picture,
+        #         "location": loc}
+        # birbs.append(birb)
+        # print(birb)
+
+    return birbs
 
 def get_jobs(regionName):
     print(regionName)

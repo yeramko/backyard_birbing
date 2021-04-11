@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, send_file
-from getBirbs import get_jobs
+from getBirbs import get_jobs, extract_info
 from markupsafe import escape
 
 app = Flask("scraper!!!")
@@ -21,6 +21,7 @@ def info(birb):
         birb = birb[:-len("(male")+1]
     elif "(femlale)" in birb:
         birb = birb[:-len("(female")+1]
+    extract_info("https://www.audubon.org/bird-guide?search_api_views_fulltext="+birb+"&field_bird_family_tid=All&field_bird_region_tid=All")
 
     return redirect("https://www.audubon.org/bird-guide?search_api_views_fulltext="+birb+"&field_bird_family_tid=All&field_bird_region_tid=All")
 
