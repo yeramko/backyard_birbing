@@ -1,1 +1,1 @@
-web: gunicorn birb_scraper:server
+web: gunicorn server:app

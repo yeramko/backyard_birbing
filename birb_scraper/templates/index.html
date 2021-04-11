@@ -47,6 +47,7 @@
                 <a href="/">Search</a>
                 <a href="#resources">Resources</a>
                 <a href="#about">About Us</a>
+                <a href="https://www.sciencedirect.com/science/article/pii/S0921800920322084?via%3Dihub">Research</a>
             </div>
         </div>
         </a>
@@ -69,7 +70,7 @@
 
                 {% for birb in jobs %}
                 <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                    <a href="/info" class="item-wrap fancybox">
+                    <a href="{{url_for('info', birb=birb.name)}}" class="item-wrap fancybox">
                         <div class="work-info">
                             <h3>{{birb.name}}</h3>
                             <span>{{birb.location}}</span>
@@ -78,7 +79,6 @@
                     </a>
                 </div>
                 {% endfor %}
-
             </div>
         </div>
     </section><!-- End  Works Section -->

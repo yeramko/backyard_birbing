@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, send_file
 from getBirbs import get_jobs
+from markupsafe import escape
 
 app = Flask("scraper!!!")
 
@@ -13,9 +14,9 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/info")
-def info():
-    return render_template("work-single.html", jobs=jobs)
+@app.route("/info/<birb>")
+def info(birb):
+    return redirect("https://www.audubon.org/bird-guide?search_api_views_fulltext="+birb+"&field_bird_family_tid=All&field_bird_region_tid=All")
 
 
 @app.route("/report")
