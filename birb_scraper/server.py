@@ -36,7 +36,6 @@ def export():
         if not jobs:
             raise Exception()
         save_to_file(jobs)
-        print("hungry")
         return send_file("jobs.csv", as_attachment=True)
         
     except:

@@ -19,6 +19,7 @@ def get_last_page():
     return max_page
 
 def extract_data(html):
+
     title = html.find("h2", {"class":"title"}).find("a")["title"]
     company = html.find("span", {"class":"company"})
     if company:
@@ -50,10 +51,16 @@ def extract_jobs():
     photodivs = soup.find_all("div", {"class": "photodiv"})
 
     birbs = []
+    pics = []
 
     for photodiv in photodivs:
         birbs.append(photodiv.find("p").get_text())
-        #birbs.append(photodiv.find("img"))
+
+
+        image = photodiv.find("img")
+        img = image.attrs['src']
+        picture = "https://www.birdscanada.org/bscapps/checklist/i"+img
+        pics.append(picture)
 
     return birbs
 
