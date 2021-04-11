@@ -52,7 +52,7 @@ def extract_jobs():
     birbs = []
 
     for photodiv in photodivs:
-        birbs.append(photodiv.find("p"))
+        birbs.append(photodiv.find("p").get_text())
         #birbs.append(photodiv.find("img"))
 
     return birbs
