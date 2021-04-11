@@ -2,9 +2,9 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from scraper import halfbakedharvest
+from backyard_birbing.scraper import df
 # Cast as a list of values for calculating weights
-dataframe = halfbakedharvest()
+dataframe = df
 text_data = dataframe.text.values.tolist()
 
 # Calculate TF-IDF matrix
