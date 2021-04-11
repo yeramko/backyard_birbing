@@ -54,7 +54,7 @@ def extract_jobs(URL):
 
 
 def get_jobs(regionName):
-    URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CAbcgv&regionName={regionName}%2C+British+Columbia&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
+    URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CAbcgv&regionName="+regionName+"%2C+British+Columbia&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
 
     jobs = extract_jobs(URL)
     return jobs
