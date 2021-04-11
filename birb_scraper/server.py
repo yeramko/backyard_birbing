@@ -16,6 +16,7 @@ def about():
 
 @app.route("/info/<birb>")
 def info(birb):
+    print(birb)
     return redirect("https://www.audubon.org/bird-guide?search_api_views_fulltext="+birb+"&field_bird_family_tid=All&field_bird_region_tid=All")
 
 
