@@ -68,7 +68,7 @@ def extract_jobs():
     return birbs
 
 
-def get_jobs(anything):
+def get_jobs(location):
     #last_page = get_last_page()
     jobs = extract_jobs()
     return jobs

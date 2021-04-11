@@ -8,7 +8,20 @@ db = {}
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+# @app.route("/")
+# def home():
+#     return render_template("index.html")
+#
+# @app.route("/")
+# def home():
+#     return render_template("index.html")
+
 
 @app.route("/report")
 def report():
@@ -23,7 +36,7 @@ def report():
             db[word] = jobs
     else:
         return redirect("/")
-    return render_template("report.html", searchWord=word, jobCnt=len(jobs), jobs=jobs)
+    return render_template("index.html", searchWord=word, jobCnt=len(jobs), jobs=jobs)
 
 @app.route("/export")
 def export():
