@@ -51,16 +51,18 @@ def extract_jobs():
     photodivs = soup.find_all("div", {"class": "photodiv"})
 
     birbs = []
-    pics = []
 
     for photodiv in photodivs:
-        birbs.append(photodiv.find("p").get_text())
-
+        name = photodiv.find("p").get_text()
 
         image = photodiv.find("img")
         img = image.attrs['src']
-        picture = "https://www.birdscanada.org/bscapps/checklist/i"+img
-        pics.append(picture)
+        picture = "https://www.birdscanada.org/bscapps/checklist/"+img
+        location = "Metro Vancouver, BC"
+        birb = {"name": name,
+        "picture": picture,
+        "location": location}
+        birbs.append(birb)
 
     return birbs
 

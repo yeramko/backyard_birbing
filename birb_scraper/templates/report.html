@@ -20,11 +20,11 @@
       <h4>picture</h4>
       <h4>location</h4>
       <h4>link</h4>
-      {% for job in jobs %}
-      <span>{{job}}</span>
-      <span>{{job.company}}</span>
-      <span>{{job.location}}</span>
-      <a href="{{job.apply_link}}" target="_blank">Apply</a>
+      {% for birb in jobs %}
+      <span>{{birb.name}}</span>
+      <img src={{birb.picture}}, alt="pic">
+      <span>{{birb.location}}</span>
+      <a href="{{birb.apply_link}}" target="_blank">Apply</a>
       {% endfor %}
     </section>
   </body>
