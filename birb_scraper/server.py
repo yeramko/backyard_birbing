@@ -17,6 +17,11 @@ def about():
 @app.route("/info/<birb>")
 def info(birb):
     print(birb)
+    if "(male)" in birb:
+        birb = birb[:-len("(male")+1]
+    elif "(femlale)" in birb:
+        birb = birb[:-len("(female")+1]
+
     return redirect("https://www.audubon.org/bird-guide?search_api_views_fulltext="+birb+"&field_bird_family_tid=All&field_bird_region_tid=All")
 
 
