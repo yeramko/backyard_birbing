@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 
-def extract_jobs(URL, loc):
+def extract_jobs(URL):
     r = requests.get(URL)
 
     soup = BeautifulSoup(r.text, "html.parser")
@@ -20,8 +20,7 @@ def extract_jobs(URL, loc):
         picture = "https://www.birdscanada.org/bscapps/checklist/"+img
         location = "Metro Vancouver, BC"
         birb = {"name": name,
-        "picture": picture,
-        "location": loc}
+        "picture": picture}
         birbs.append(birb)
         print(birb)
 
@@ -86,5 +85,5 @@ def get_jobs(regionName):
 
     URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CA{regionName}&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
 
-    jobs = extract_jobs(URL, regionName)
+    jobs = extract_jobs(URL)
     return jobs
