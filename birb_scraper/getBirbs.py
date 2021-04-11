@@ -31,25 +31,10 @@ def extract_info(url):
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    cards = soup.find_all("a", {"class": "card-link"})
-    print(cards)
+    cards = soup.find("a", {"class": "card-link"})
+    link = cards.get("href")
 
-    birbs = []
-
-
-        # name = photodiv.find("p").get_text()
-        #
-        # image = photodiv.find("img")
-        # img = image.attrs['src']
-        # picture = "https://www.birdscanada.org/bscapps/checklist/" + img
-        # location = "Metro Vancouver, BC"
-        # birb = {"name": name,
-        #         "picture": picture,
-        #         "location": loc}
-        # birbs.append(birb)
-        # print(birb)
-
-    return birbs
+    return link
 
 def get_jobs(regionName):
     print(regionName)
