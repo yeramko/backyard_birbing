@@ -63,6 +63,7 @@ def extract_jobs():
         "picture": picture,
         "location": location}
         birbs.append(birb)
+        print(birb)
 
     return birbs
 
