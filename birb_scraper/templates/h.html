@@ -36,33 +36,18 @@
 </head>
 
 <body>
-
-<!-- ======= Navbar ======= -->
-<div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-    <div class="container py-2 py-md-5">
-        <div class="row align-items-start">
-            <div class="col-md-2">
-                <ul class="custom-menu">
-
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="#resources">Birb Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
 <nav class="navbar navbar-light custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Backyard Birbs</a>
-        <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
-            <span></span>
+        <a class="navbar-brand" href="/">Backyard Birbs</a>
+        <span></span>
+        <div class="col-md-12 col-lg-6 text-start text-lg-end" data-aos="fade-up" data-aos-delay="100">
+            <div class="active">
+                <a href="/">Search</a>
+                <a href="#resources">Resources</a>
+                <a href="#about">About Us</a>
+            </div>
+        </div>
         </a>
-
     </div>
 </nav>
 
@@ -76,11 +61,12 @@
                     <h2>More birbs, more happy!</h2>
                     <p class="mb-0">Did you know having just 14 more bird species in your life makes you as happy as
                         earning an extra $200 a month according to new research?</p>
+
+                    <p> That's why we're making it easier to get to know the birds in your own backyard!</p>
                 </div>
             </div>
             <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 
-                <p> That's why we're making it easier to get to know the birds in your own backyard!</p>
                 <p> Enter your province here to see all the birds near you!</p>
 
                 <form action="/report" method="get">
@@ -126,13 +112,15 @@
         </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======= About Us Section ======= -->
+    <a id="about"></a>
     <section class="section services">
         <div class="container">
             <div class="row justify-content-center text-center mb-4">
                 <div class="col-5">
-                    <h3 class="h3 heading">My Services</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit explicabo inventore.</p>
+                    <h3 class="h3 heading">About Us</h3>
+                    <p>We are birb enthusiasts combining our love of all that is cute with some CS wizardry!</p>
+                    <p>Thanks to the 2021 BCS Hackathon for motivating us to build stronger connections with between our diverse interests!</p>
                 </div>
             </div>
             <div class="row">
@@ -188,6 +176,7 @@
             </div>
         </div>
     </section><!-- End Services Section -->
+
 
 
 </main><!-- End #main -->
