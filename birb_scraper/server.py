@@ -15,7 +15,7 @@ def about():
 
 @app.route("/info")
 def info():
-    return render_template("work-single.html")
+    return render_template("work-single.html", jobs=jobs)
 
 
 @app.route("/report")
