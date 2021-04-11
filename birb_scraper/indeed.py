@@ -54,7 +54,40 @@ def extract_jobs(URL):
 
 
 def get_jobs(regionName):
-    URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CAbcgv&regionName="+regionName+"%2C+British+Columbia&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
+
+    if regionName:
+        regionName = regionName.lower()
+        if regionName == "british columbia":
+            regionName = "bc"
+        if regionName == "alberta":
+            regionName = "ab"
+        if regionName == "ontario":
+            regionName = "on"
+        if regionName == "quebec":
+            regionName = "qc"
+        if regionName == "manitoba":
+            regionName = "mb"
+        if regionName == "saskatchewan":
+            regionName = "sk"
+        if regionName == "yukon":
+            regionName = "yk"
+        if regionName == "northwest territories" or "northwest" or "nwt":
+            regionName = "nt"
+        if regionName == "nunavut":
+            regionName = "nu"
+        if regionName == "nova scotia":
+            regionName = "ns"
+        if regionName == "new brunswick":
+            regionName = "nb"
+        if regionName == "prince edward island" or "prince edward" or "pei":
+            regionName = "pe"
+        if regionName == "newfoundland" or "labrador" or "newfoundland labrador":
+            regionName = "nlnf"
+        else:
+            regionName = regionName
+
+
+    URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CA{regionName}&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
 
     jobs = extract_jobs(URL)
     return jobs
