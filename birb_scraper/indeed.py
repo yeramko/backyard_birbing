@@ -1,22 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CAbcgv&regionName=Metro+Vancouver%2C+British+Columbia&month=&week=&dt_day=10&dt_month=4&dt_year=2021"
 
-def get_last_page():
-    r = requests.get(URL)
-
-    soup = BeautifulSoup(r.text, "html.parser")
-    pagination = soup.find("div", {"class": "pagination"})
-
-    links = pagination.find_all("a")
-    pages = []
-
-    for link in links[:-1]:
-        pages.append(int(link.string))
-
-    max_page = pages[-1]
-    return max_page
 
 def extract_data(html):
 
@@ -43,7 +28,7 @@ def extract_data(html):
         'link': f"https://ca.indeed.com/viewjob?jk={job_id}"
         }
 
-def extract_jobs():
+def extract_jobs(URL):
     r = requests.get(URL)
 
     soup = BeautifulSoup(r.text, "html.parser")
@@ -68,7 +53,8 @@ def extract_jobs():
     return birbs
 
 
-def get_jobs(anything):
-    #last_page = get_last_page()
-    jobs = extract_jobs()
+def get_jobs(regionName):
+    URL = f"https://www.birdscanada.org/apps/checklist/checklist.jsp?lang=EN&region=CAbcgv&regionName={regionName}%2C+British+Columbia&month=&week=&dt_day=11&dt_month=4&dt_year=2021"
+
+    jobs = extract_jobs(URL)
     return jobs

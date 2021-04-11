@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, send_file
 from indeed import get_jobs
 from exporter import save_to_file
 
-app = Flask("scrapper!!!")
+app = Flask("scraper!!!")
 
 db = {}
 
